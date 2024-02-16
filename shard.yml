@@ -1,0 +1,13 @@
+name: git-ego
+version: 0.0.1
+
+authors:
+  - Box O'Rocks <rocx@rocx.rocks>
+
+targets:
+  git-ego:
+    main: src/git-ego.cr
+
+crystal: >= 1.11.2
+
+license: GPL-3.0-only

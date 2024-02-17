@@ -38,29 +38,26 @@ TODO: Write development instructions here
 
 ## Config
 
-`git-ego` is configured with a [TOML] (v0.5.0) file since it's close
-enough to the format Git uses.
-
-[TOML]: https://toml.io/en/v0.5.0
+`git-ego` is configured with YAML.
 
 Table names are the keys for the alter ego itself.
 
-```toml
-[john]
-  user.name = "John Doe"
-  user.email = "jdoe1@example.com"
-  core.sshCommand = "ssh -i ~/.ssh/id_jdoe -o 'IdentitiesOnly yes"
+```yaml
+john:
+  user.name: John Doe
+  user.email: jdoe1@example.com
+  core.sshCommand: ssh -i ~/.ssh/id_jdoe -o 'IdentitiesOnly yes'
 
-[rocx]
-  user.name = "Box O'Rocks"
-  user.email = "rocx@rocx.rocks"
-  core.sshCommand = "ssh -i ~/.ssh/id_jdoe -o 'IdentitiesOnly yes"
+rocx:
+  user.name: Box O'Rocks
+  user.email: rocx@rocx.rocks
+  core.sshCommand: ssh -i ~/.ssh/id_rocx -o 'IdentitiesOnly yes'
 ```
 
 ```
-$ git ego -l
-* john
-rocx
+$ git config --local user.name
+John Doe
 $ git ego rocx
-$
+$ git config --local user.name
+Box O'Rocks
 ```

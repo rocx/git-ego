@@ -1,7 +1,13 @@
 module GitEgo
+  enum Workflow
+    Change # Change configurations representing an ego
+    List   # List all known egos
+  end
+
   class Config
     property ego_file : String
     property target   : String?
+    property workflow : Workflow
 
     def initialize
       # List of egos
@@ -9,6 +15,9 @@ module GitEgo
 
       # Ego to switch to
       @target = nil
+
+      # The intended command
+      @workflow = Workflow::Change
     end
 
     private def default_ego_file : String
